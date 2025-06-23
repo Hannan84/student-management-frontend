@@ -1,5 +1,36 @@
-# Vue 3 + Vite
+# Student Management Frontend (Vue 3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is the **frontend** built with Vue 3, Vite, and Tailwind CSS to consume the Laravel API.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Features
+
+- Vue Router for navigation
+- Axios for API requests
+- Tailwind CSS for styling
+- Token-based auth (via localStorage)
+
+## Setup Instructions
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/student-management-frontend.git
+   cd student-management-frontend
+
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   npm run dev
+
+   ```
+
+3. Make sure the backend Laravel server is running at:
+   http://localhost:8000
+
+4. Set the correct base URL in your axios.js:
+   ```bash
+    axios.defaults.baseURL = "http://localhost:8000/api";
+   ```
