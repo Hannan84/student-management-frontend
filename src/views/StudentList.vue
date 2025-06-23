@@ -21,6 +21,9 @@
             class="text-blue-600 mr-2"
             >Edit</router-link
           >
+          <button @click="deleteStudent(student.id)" class="text-red-600 mr-2">
+            Delete
+          </button>
         </div>
       </li>
     </ul>
@@ -37,4 +40,16 @@ onMounted(async () => {
   const res = await axios.get("/students");
   students.value = res.data.students;
 });
+
+const deleteStudent = async (id) => {
+  if (confirm("Are you sure you?")) {
+    try {
+      await axios.delete(`/students/${id}`);
+      students.value = students.value.filter((s) => s.id !== id);
+    } catch (err) {
+      console.error("Delete error:", err);
+      alert("Failed to delete student.");
+    }
+  }
+};
 </script>
